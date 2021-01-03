@@ -37,11 +37,11 @@ client.on("message", message => {
   if(spl[0] == "!ekle") {
   var link = spl[1]
   fetch(link).then(() => {
-    if(db.get("linkler").map(z => z.url).includes(link)) return message.channel.send("<:asuna_no:732219380795965471> Zaten Eklenmiş!")
-    message.channel.send("<:asuna_yes:732219381085503529> Başarılı!");
+    if(db.get("linkler").map(z => z.url).includes(link)) return message.channel.send("<a:sperlike:795233206618030080> Zaten Eklenmiş!")
+    message.channel.send("<a:ModernOnayGif:795233212833071125> Başarılı!");
     db.push("linkler", { url: link, owner: message.author.id})
   }).catch(e => {
-    return message.channel.send("<:asuna_no:732219380795965471> " + e)
+    return message.channel.send("<a:ReddetmekGif:795233493272756234> " + e)
   })
   }
 })
@@ -62,22 +62,22 @@ const Discord = require('discord.js');
 client.on("message", message => {
   if(message.author.bot) return;
     var spl = message.content.split(" ");
-  if(spl[0] == "!yardım") {
+  if(spl[0] == "c!yardım") {
 let embed = new Discord.RichEmbed()
 .setColor('#4ca74c')
 .addField(`Uptime Bot v1.0 Yardım`, `Bot glitch sitelerinin 7/24 açık çalışmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar herhangi bir bakım gerektirmeden 7/24 çalışır.`)
 .addField(`Genel Komutlar`,`
 
-\`!yardım\` - Yardım Menüsünü Gösterir.
-\`!ekle\` - Sisteme Bot Eklersiniz.
-\`!botsay\` - Sistemde Kaç Bot Olduğunu Listeler.
+\`c!yardım\` - Yardım Menüsünü Gösterir.
+\`cc!ekle\` - Sisteme Bot Eklersiniz.
+\`c!botsay\` - Sistemde Kaç Bot Olduğunu Listeler.
 `)
 .addField(`Link`, `[Loz 'Bey](https://discord.gg/WbMUB2k)
 [Botumuzu Ekleyin](https://discord.com/oauth2/authorize?client_id=727978641702649966&scope=bot&permissions=8)
 [Destek Sunucumuz](https://discord.gg/WbMUB2k)`)
 .setThumbnail(client.user.avatarURL)
 .setAuthor(`Uptime`, client.user.avatarURL)
-.setFooter(`2020 © Uptime | Kodlayan MertBhey, Editleyenler Alfonzo, Loz 'Bey.`, client.user.avatarURL)
+.setFooter(`2020 © Uptime | Kodlayan MertBhey, Editleyenler Alfonzo, Loz 'Bcey.`, client.user.avatarURL)
 return message.channel.send(embed);
     }
  
